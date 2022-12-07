@@ -1,0 +1,40 @@
+@import "../../styles/";
+
+.TextArea {
+  $this: &;
+  display: flex;
+  width: 100%;
+  min-height: 120px;
+  align-items: center;
+  padding: 18px 40px 18px 12px;
+  width: 100%;
+  background-color: $color-bg-input;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: transparent;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: $color-bg-input-hover;
+  }
+
+  &.TextArea__error {
+    background-color: $color-light-red;
+
+    &:hover {
+      background-color: $color-light-red-hover;
+    }
+  }
+
+  &#{$this}__active {
+    width: 100% !important;
+    border: 1px solid rgba(0, 0, 0, 0.54) !important;
+    color: $base-dark-font-color !important;
+    background-color: $base-light-background-color !important;
+  }
+}
+
+.TextArea:-webkit-autofill {
+  -webkit-background-clip: text;
+}
